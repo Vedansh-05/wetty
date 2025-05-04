@@ -8,6 +8,7 @@ services:
       - ~/.ssh/wetty_key:/wetty_key:ro
     command: >
       --port 8085
+      --base /
       --ssh-host 127.0.0.1
       --ssh-user vedansh
       --ssh-key /wetty_key
