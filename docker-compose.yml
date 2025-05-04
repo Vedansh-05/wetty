@@ -3,13 +3,13 @@ version: '3.8'
 services:
   wetty:
     image: wettyoss/wetty
-    network_mode: host
+    container_name: wetty
+    ports:
+      - "8080:3000"
     volumes:
       - ~/.ssh/wetty_key:/wetty_key:ro
     command: >
-      --port 8085
-      --base /
-      --ssh-host 127.0.0.1
-      --ssh-user vedansh
-      --ssh-key /wetty_key
-    restart: always
+      --ssh-host=192.168.1.51
+      --ssh-user=vedansh
+      --ssh-key=/wetty_key
+      --base=/
